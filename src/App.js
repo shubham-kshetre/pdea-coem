@@ -1,13 +1,15 @@
 import React from "react";
 import "./App.css";
-import { Box, Container } from "@mui/material";
+import { Box } from "@mui/material";
 import HeroSection from "./Components/HeroSection/HereSection";
 
 const LandingPage = () => {
   return (
     <Box className="parent">
       <HeroSection />
-      <div>
+
+      {/* Dummy Div */}
+      <div style={{ height: "100vh" }}>
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cupiditate
         sunt officiis quidem quibusdam voluptatum unde, aliquam velit
         consequatur expedita eius asperiores optio odit modi porro, qui ipsum

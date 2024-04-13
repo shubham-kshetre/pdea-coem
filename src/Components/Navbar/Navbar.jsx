@@ -15,17 +15,37 @@ function Navbar() {
   return (
     <nav className={`navbar ${scrolled ? "scrolled" : ""}`}>
       <div className="logo">Your Logo</div>
+
       <ul className="nav-links">
         <li>
-          <a href="#about">About</a>
+          <a href="#About">About</a>
         </li>
         <li>
-          <a href="#contact">Contact Us</a>
+          <a href="#Contact">Contact Us</a>
         </li>
         <li>
-          <a href="#admission">Admission</a>
+          <a href="#Admission">Admission</a>
+        </li>
+        <li>
+          <a href="#Events">Events</a>
+        </li>
+        <li>
+          <a href="#Academics">Academics</a>
+        </li>
+        <li>
+          <a href="#Gallery">Gallery</a>
+        </li>
+        <li>
+          <a href="#Scholarship">Scholarship</a>
+        </li>
+        <li>
+          <a href="#Hostels">Hostels</a>
+        </li>
+        <li>
+          <a href="#Placements">Placements</a>
         </li>
       </ul>
+
       <button className="apply-btn">Apply Now</button>
     </nav>
   );
