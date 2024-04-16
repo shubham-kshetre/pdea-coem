@@ -1,8 +1,8 @@
 import React, { useEffect, useRef, useState } from "react";
 import "./App.css";
-import { Box, Typography } from "@mui/material";
+import { Box } from "@mui/material";
 import HeroSection from "./Components/HeroSection/HereSection";
-import Records from "./helper/Records/Records";
+import Statistics from "./Components/Statistics/Statistics";
 
 const LandingPage = () => {
   return (
@@ -55,30 +55,7 @@ const LandingPage = () => {
         blanditiis beatae at similique maxime. officiis vel alias commodi
       </div>
 
-      <Box
-        sx={{
-          background: "black",
-          color: "white",
-          padding: "24px",
-          display: "flex",
-          justifyContent: "space-between",
-        }}
-      >
-        <Box sx={{ padding: "4px", paddingX: "12px" }}>
-          <Records number={200} />
-          <Typography variant="h4">Happy Students</Typography>
-        </Box>
-
-        <Box sx={{ padding: "4px", paddingX: "12px" }}>
-          <Records number={200} />
-          <Typography variant="h4">Placements</Typography>
-        </Box>
-
-        <Box sx={{ padding: "4px", paddingX: "12px" }}>
-          <Records number={200} />
-          <Typography variant="h4">Teachers</Typography>
-        </Box>
-      </Box>
+      <Statistics />
     </Box>
   );
 };

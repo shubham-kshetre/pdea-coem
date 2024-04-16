@@ -34,7 +34,7 @@ const Records = ({ number }) => {
   return (
     <div ref={componentRef}>
       <Typography variant="h4">
-        <CountUp isCounting={start} end={number} duration={3.2} /> +
+        <CountUp isCounting={start} end={number} duration={2} /> +
       </Typography>
     </div>
   );
