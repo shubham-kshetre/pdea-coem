@@ -2,14 +2,16 @@ section{
   min-height: 90vh;
   width: 100%;
   display: flex;
+  /* gap: 1rem; */
   align-items: center;
   justify-content: center;
   background-color: #dfdfdf;
+  flex-direction: row;
 }
 
 .containers{
   width: 100%;
-  max-width: 1200px;
+  max-width: 900px;
   margin: 0 auto;
   display: flex;
   align-items: center;
