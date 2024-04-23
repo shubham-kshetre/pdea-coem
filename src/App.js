@@ -14,11 +14,9 @@ const LandingPage = () => {
 
       <About />
 
-      <Box sx={{ height: 700, width: "100%" }}>
+      <Box sx={{ height: 800, width: "100%" }}>
         <EventCarousel />
       </Box>
-
-      <About />
 
       <Statistics />
     </Box>
