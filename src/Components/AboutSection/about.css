@@ -1,12 +1,11 @@
 section{
-  min-height: 90vh;
   width: 100%;
   display: flex;
-  /* gap: 1rem; */
   align-items: center;
   justify-content: center;
   background-color: #dfdfdf;
   flex-direction: row;
+  padding: 2rem;
 }
 
 .containers{
@@ -16,9 +15,6 @@ section{
   display: flex;
   align-items: center;
   justify-content: center;
-
-  /* background-color: aqua; */
-
 }
 
 .left{
