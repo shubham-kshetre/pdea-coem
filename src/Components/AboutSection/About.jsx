@@ -1,6 +1,5 @@
 import React from 'react';
 import '../AboutSection/about.css';
-import FacultyContact from '../ContactSection/FacultyContact';
 
 const About = () => {
   return (
@@ -18,7 +17,7 @@ const About = () => {
             </div>
           </div>
         </div>
-        <FacultyContact/>
+        
       </section>
     </>
   );
