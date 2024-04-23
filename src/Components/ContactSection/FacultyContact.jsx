@@ -88,6 +88,7 @@ const FacultyContact = () => {
         </div>
         <div className="middle-border"></div>
         <div className="right-zone"></div>
+        
       </div>
     </>
   );
