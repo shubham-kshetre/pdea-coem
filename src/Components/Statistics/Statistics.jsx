@@ -2,7 +2,7 @@ import { Box, Typography } from '@mui/material'
 import React from 'react'
 import Records from '../../helper/Records/Records'
 import CntDiv from "./CntDiv"
-import bgImage from "./images.jpeg"
+// import bgImage from "./images.jpeg" Akshay commented this because it gives error..
 
 function Statistics() {
   return (
