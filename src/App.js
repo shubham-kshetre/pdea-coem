@@ -5,6 +5,8 @@ import HeroSection from "./Components/HeroSection/HereSection";
 import Statistics from "./Components/Statistics/Statistics";
 import About from "./Components/AboutSection/About";
 // import EventCarousel from "./Components/Carousel/EventCarousel";
+import Cards from "./Components/Card/card.jsx";
+import Footer1 from "./Components/Footer1/footer1.jsx";
 import EventCarouselNavigator from '../src/Components/Carousel/EventCarouselNavigator'
 
 
@@ -15,11 +17,14 @@ const LandingPage = () => {
 
       <About />
 
-      <Box sx={{ height: 900, width: "100%" }}>
-        <EventCarouselNavigator/>
+      <Box sx={{ height: 800, width: "100%" }}>
+        <EventCarousel />
       </Box>
 
       <Statistics />
+      <Footer1/>
+      
+
     </Box>
   );
 };
