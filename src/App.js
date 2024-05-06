@@ -7,7 +7,8 @@ import About from "./Components/AboutSection/About";
 // import EventCarousel from "./Components/Carousel/EventCarousel";
 import Cards from "./Components/Card/card.jsx";
 import Footer1 from "./Components/Footer1/footer1.jsx";
-import EventCarouselNavigator from '../src/Components/Carousel/EventCarouselNavigator'
+import EventCarouselNavigator from '../src/Components/Carousel/EventCarouselNavigator';
+
 
 
 const LandingPage = () => {
@@ -18,7 +19,7 @@ const LandingPage = () => {
       <About />
 
       <Box sx={{ height: 800, width: "100%" }}>
-        <EventCarousel />
+        <EventCarouselNavigator />
       </Box>
 
       <Statistics />
