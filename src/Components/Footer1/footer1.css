@@ -1,0 +1,51 @@
+.footer{
+    margin: 0px;
+    padding: 0px;
+    border: 2px solid black;
+    margin-top: 20px;
+}
+
+.insideTop {
+    background-color:rgb(255, 255, 255);
+    padding: 20px;
+    display: flex;
+    justify-content:start;
+    align-items: center;
+    height: 300px;
+    color:black;
+  }
+
+  .logo img{
+    margin: 5vmin;
+    height:150px;
+    width:150px;
+  }
+
+  .description{
+    width:500px;
+    height:220px;
+    text-align: center;
+  }
+
+  .description p{
+    font-size: 2vmin;
+  }
+
+  .description a{
+    color: red;
+  }
+  
+  .sharelink{
+    width:500px;
+    height: fit-content;
+    text-align: center;
+  }
+
+  .insideBottom{
+    text-align: center;
+    color: #000;
+    height: fit-content;
+    background-color: blue;
+    padding: 3px;
+    font-size: 15px;
+  }

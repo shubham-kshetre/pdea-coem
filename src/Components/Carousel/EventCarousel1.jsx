@@ -3,10 +3,10 @@ import '../Carousel/EventCarousel.css';
 
 const EventCarousel = () => {
   const [items, setItems] = useState([
-    { id: 1, imgUrl: "https://i.ibb.co/qCkd9jS/img1.jpg", name: "Switzerland", des: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab, eum!" },
-    { id: 2, imgUrl: "https://i.ibb.co/jrRb11q/img2.jpg", name: "Finland", des: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab, eum!" },
-    { id: 3, imgUrl: "https://i.ibb.co/NSwVv8D/img3.jpg", name: "Iceland", des: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab, eum!" },
-    { id: 4, imgUrl: "https://i.ibb.co/Bq4Q0M8/img4.jpg", name: "Australia", des: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab, eum!" },
+    { id: 1, imgUrl: "https://i.ibb.co/qCkd9jS/img1.jpg", name: "India", des: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab, eum!" },
+    { id: 2, imgUrl: "https://i.ibb.co/jrRb11q/img2.jpg", name: "MH", des: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab, eum!" },
+    { id: 3, imgUrl: "https://i.ibb.co/NSwVv8D/img3.jpg", name: "Parabhani", des: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab, eum!" },
+    { id: 4, imgUrl: "https://i.ibb.co/Bq4Q0M8/img4.jpg", name: "Nashik", des: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab, eum!" },
     { id: 5, imgUrl: "https://i.ibb.co/jTQfmTq/img5.jpg", name: "Netherland", des: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab, eum!" },
     { id: 6, imgUrl: "https://i.ibb.co/RNkk6L0/img6.jpg", name: "Ireland", des: "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ab, eum!" }
   ]);
