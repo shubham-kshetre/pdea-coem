@@ -1,0 +1,36 @@
+.footer {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 5fr));
+    gap: 10px;
+    background-color: black;
+    color: white;
+    padding: 20px;
+}
+
+.footer-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-column img {
+    max-width: 30%;
+    height: auto;
+}
+
+.footer-column h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-column ul li {
+    margin-bottom: 5px;
+}
+
+.footer-column p {
+    margin-top: 5px;
+}

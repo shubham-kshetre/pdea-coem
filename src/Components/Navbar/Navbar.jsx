@@ -18,31 +18,31 @@ function Navbar() {
 
       <ul className="nav-links">
         <li>
-          <a href="#About">About</a>
+          <a href="/about">About</a>
         </li>
         <li>
-          <a href="#Contact">Contact Us</a>
+          <a href="/contactus">Contact Us</a>
         </li>
         <li>
-          <a href="#Admission">Admission</a>
+          <a href="/admission">Admission</a>
         </li>
         <li>
-          <a href="#Events">Events</a>
+          <a href="/events">Events</a>
         </li>
         <li>
-          <a href="#Academics">Academics</a>
+          <a href="/academics">Academics</a>
         </li>
         <li>
-          <a href="#Gallery">Gallery</a>
+          <a href="/gallery">Gallery</a>
         </li>
         <li>
-          <a href="#Scholarship">Scholarship</a>
+          <a href="/scholarship">Scholarship</a>
         </li>
         <li>
-          <a href="#Hostels">Hostels</a>
+          <a href="/hostels">Hostels</a>
         </li>
         <li>
-          <a href="#Placements">Placements</a>
+          <a href="/placements">Placements</a>
         </li>
       </ul>
 
