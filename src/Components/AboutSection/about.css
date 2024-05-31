@@ -20,7 +20,7 @@ section{
 .left{
   width: 150%;
   height: 580px;
-  background: url('../../assets/sample-clg-image.jpg') no-repeat center / cover;
+  background: url('../../assets/images/sample-clg-image.jpg') no-repeat center / cover;
   border-radius: 25px;
 }
 
