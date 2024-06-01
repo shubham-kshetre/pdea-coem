@@ -20,6 +20,11 @@
     margin-right: auto;
   }
   
+  .logo {
+    cursor: pointer;
+  }
+  
+  
   .nav-links {
     list-style: none;
     display: flex;
