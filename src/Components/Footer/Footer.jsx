@@ -9,7 +9,9 @@ const Footer = () => {
                     <img src="/pdea1.jpeg"  alt="Logo" />
                     <p>Pune District Education Association's College of Engineering, Manjari (Bk)
     Manjari Bk, Pincode: 412307</p>
-                    <p>Contact us:+91546568113</p>
+                    <p style={{marginBottom:'20px'}}>Contact us:+91546568113</p>
+                    <iframe title="pdea-map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3783.104819898327!2d73.98019681028899!3d18.52416478249738!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2c258af5922cf%3A0xde3b91beb5003629!2sPune%20District%20Education%20Association&#39;s%20College%20of%20Engineering!5e0!3m2!1sen!2sin!4v1717219096288!5m2!1sen!2sin" width="240" height="150"  style={{border:"0"}} allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
                 </div>
                 <div className="footer-column">
                     <h3>Social Media</h3>
@@ -56,7 +58,7 @@ const Footer = () => {
                     </ul>
                 </div>
             </footer>
-            <div style={{textAlign:'center'}}>
+            <div className="footer-copyline">
             <p>© 2022 PDEA College Of Engineering. All Rights Reserved.</p>
             </div>
         </>
