@@ -34,3 +34,11 @@
 .footer-column p {
     margin-top: 5px;
 }
+
+.footer-copyline{
+    text-align:center;
+    color:white;
+    background-color:black;
+    border-top:1px white solid;
+
+}
