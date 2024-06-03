@@ -3,6 +3,7 @@ import "./Navbar.css";
 
 function Navbar() {
   const [scrolled, setScrolled] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
   const handleScroll = () => {
     const isScrolled = window.scrollY > 0;
@@ -16,20 +17,47 @@ function Navbar() {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [scrolled]);
 
   const handleLogoClick = () => {
     window.location.href = "/";
   };
 
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
+
   return (
     <nav className={`navbar ${scrolled ? "scrolled" : ""}`}>
+      <div className="hamburger" onClick={toggleMenu}>
+        <div className={`bar ${isOpen ? "open" : ""}`}></div>
+        <div className={`bar ${isOpen ? "open" : ""}`}></div>
+        <div className={`bar ${isOpen ? "open" : ""}`}></div>
+      </div>
+      
       <div className="logo" onClick={handleLogoClick} style={{ cursor: "pointer" }}>
         Your Logo
       </div>
 
-      <ul className="nav-links">
+      <ul className={`nav-links ${isOpen ? "open" : ""}`}>
+        <li className="dropdown">
+          <a href="/academics" target="_blank" rel="noopener noreferrer">Academics</a>
+          <ul className="dropdown-content">
+            <li>
+              <a href="/departments" target="_blank" rel="noopener noreferrer">Departments</a>
+              <ul className="dropdown-subcontent">
+                <li><a href="/first-year" target="_blank" rel="noopener noreferrer">First Year Engineering</a></li>
+                <li><a href="/mech-eng" target="_blank" rel="noopener noreferrer">Mechanical Engineering</a></li>
+                <li><a href="/comp-eng" target="_blank" rel="noopener noreferrer">Computer Engineering</a></li>
+                <li><a href="/extc-eng" target="_blank" rel="noopener noreferrer">Electronics and Telecommunication Engineering</a></li>
+                <li><a href="/instru-eng" target="_blank" rel="noopener noreferrer">Instrumentation and Control Engineering</a></li>
+                <li><a href="/it-eng" target="_blank" rel="noopener noreferrer">Information Technology</a></li>
+              </ul>
+            </li>
+            <li><a href="/e-learning" target="_blank" rel="noopener noreferrer">E-Learning</a></li>
+          </ul>
+        </li>
+
         <li>
           <a href="/about" target="_blank" rel="noopener noreferrer">About</a>
         </li>
@@ -41,9 +69,6 @@ function Navbar() {
         </li>
         <li>
           <a href="/events" target="_blank" rel="noopener noreferrer">Events</a>
-        </li>
-        <li>
-          <a href="/academics" target="_blank" rel="noopener noreferrer">Academics</a>
         </li>
         <li>
           <a href="/gallery" target="_blank" rel="noopener noreferrer">Gallery</a>
