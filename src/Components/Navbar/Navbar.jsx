@@ -36,7 +36,7 @@ function Navbar() {
       </div>
       
       <div className="logo" onClick={handleLogoClick} style={{ cursor: "pointer" }}>
-        Your Logo
+        PDEA'S COEM
       </div>
 
       <ul className={`nav-links ${isOpen ? "open" : ""}`}>
