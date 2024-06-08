@@ -1,5 +1,8 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useState, useEffect } from "react";
 import "./Navbar.css";
+import Dropdown from "./Dropdown/Dropdown";
+import { academicsLinks } from "./Dropdown/dropdownLinks";
 
 function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -40,27 +43,13 @@ function Navbar() {
       </div>
 
       <ul className={`nav-links ${isOpen ? "open" : ""}`}>
-        <li className="dropdown">
-          <a href="/academics" target="_blank" rel="noopener noreferrer">Academics</a>
-          <ul className="dropdown-content">
-            <li>
-              <a href="/departments" target="_blank" rel="noopener noreferrer">Departments</a>
-              <ul className="dropdown-subcontent">
-                <li><a href="/first-year" target="_blank" rel="noopener noreferrer">First Year Engineering</a></li>
-                <li><a href="/mech-eng" target="_blank" rel="noopener noreferrer">Mechanical Engineering</a></li>
-                <li><a href="/comp-eng" target="_blank" rel="noopener noreferrer">Computer Engineering</a></li>
-                <li><a href="/extc-eng" target="_blank" rel="noopener noreferrer">Electronics and Telecommunication Engineering</a></li>
-                <li><a href="/instru-eng" target="_blank" rel="noopener noreferrer">Instrumentation and Control Engineering</a></li>
-                <li><a href="/it-eng" target="_blank" rel="noopener noreferrer">Information Technology</a></li>
-              </ul>
-            </li>
-            <li><a href="/e-learning" target="_blank" rel="noopener noreferrer">E-Learning</a></li>
-          </ul>
-        </li>
+
+        <Dropdown title={{ href: "/academics", text: "Academics" }} links={academicsLinks} />
 
         <li>
           <a href="/about" target="_blank" rel="noopener noreferrer">About</a>
         </li>
+
         <li>
           <a href="/contactus" target="_blank" rel="noopener noreferrer">Contact Us</a>
         </li>
