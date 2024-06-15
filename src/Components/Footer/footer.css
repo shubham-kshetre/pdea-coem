@@ -1,6 +1,6 @@
 .footer {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 5fr));
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Adjusted for responsiveness */
     gap: 10px;
     background-color: black;
     color: white;
@@ -10,16 +10,43 @@
 .footer-column {
     display: flex;
     flex-direction: column;
+    align-items: flex-start; /* Align items to start */
 }
 
 .footer-column img {
-    max-width: 30%;
+    max-width: 50%; /* Adjusted for better responsiveness */
     height: auto;
+    margin-bottom: 10px;
 }
 
 .footer-column h3 {
     margin-top: 0;
-    margin-bottom: 10px;
+    margin-bottom: 20px; /* Added space between each h3 */
+    position: relative;
+}
+
+.footer-column h3::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: white;
+    position: absolute;
+    left: 0;
+    bottom: -5px; /* Adjust position of the underline */
+    animation: underline-animation 2s infinite; /* Infinite animation */
+}
+
+@keyframes underline-animation {
+    0% {
+        width: 0;
+    }
+    50% {
+        width: 100%;
+    }
+    100% {
+        width: 0;
+    }
 }
 
 .footer-column ul {
@@ -35,10 +62,36 @@
     margin-top: 5px;
 }
 
-.footer-copyline{
-    text-align:center;
-    color:white;
-    background-color:black;
-    border-top:1px white solid;
+.footer-copyline {
+    text-align: center;
+    color: white;
+    background-color: black;
+    border-top: 1px solid white;
+    padding: 10px 0; /* Added padding for better spacing */
+}
 
+/* Responsive styles */
+@media (max-width: 768px) {
+    .footer {
+        grid-template-columns: 1fr; /* Single column for smaller screens */
+        text-align: center; /* Center-align text for better readability */
+    }
+
+    .footer-column {
+        align-items: center; /* Center-align items */
+        margin-top: 1.5em;
+    }
+
+    .footer-column img {
+        max-width: 20%; /* Adjusted for smaller screens */
+    }
+
+    .footer-column ul {
+        padding: 0;
+        margin: 0;
+    }
+
+    .footer-column ul li {
+        margin-bottom: 10px; /* Increased margin for better spacing */
+    }
 }
