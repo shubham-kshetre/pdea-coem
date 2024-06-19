@@ -1,7 +1,7 @@
 import React from "react";
 import "./eventcard.css";
 
-function Card({ date, title, description }) {
+function EventCard({ date, title, description }) {
   const truncatedDescription = description.length > 100 
     ? description.substring(0, 255) + "..." 
     : description;
@@ -40,4 +40,4 @@ function Card({ date, title, description }) {
   );
 }
 
-export default Card;
+export default EventCard;

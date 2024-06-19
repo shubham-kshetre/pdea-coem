@@ -5,8 +5,8 @@
 import React, { useState, useEffect } from 'react';
 import './News.css';
 import { Link } from 'react-router-dom';
-import { officialNotifications } from '../../helper/officialNotifications';
-import { latestEvents } from '../../helper/latestEvents';
+import { officialNotifications } from '../../data/officialNotifications';
+import { latestEvents } from '../../data/latestEvents';
 
 const News = () => {
   const [notifications, setNotifications] = useState(officialNotifications);
