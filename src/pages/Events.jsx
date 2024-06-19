@@ -1,7 +1,5 @@
 import React from 'react';
 import Navbar from '../Components/Navbar/Navbar';
-import HeroSection from '../Components/HeroSection/HereSection';
-import eventsBackgroundImage from '../assets/images/homebackground.jpg';
 import Card from '../Components/EventCard/EventCard';
 import Footer from '../Components/Footer/Footer';
 import '../assets/css/event.css';
@@ -43,7 +41,6 @@ function Events() {
     return (
         <div className='Events'>
             < Navbar />
-            <HeroSection backgroundImage={eventsBackgroundImage} Text="Events"/>
 
             <div className="events-grid">
                 {events.map((event, index) => (

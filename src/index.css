@@ -1,3 +1,23 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+  --background-color: #FFFFFF;
+  --text-color: #3b4486;
+  --cta-color: #ec9035;
+}
+
+::-webkit-scrollbar{
+  width: 8px;
+}
+::-webkit-scrollbar-thumb{
+  background-color: var(--cta-color);
+  border-radius: 30px;
+}
+
+@layer utilities {
+  .paused{
+    animation-play-state: paused;
+  }
+}

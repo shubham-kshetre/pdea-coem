@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import "./Navbar.css";
 import Dropdown from "./Dropdown/Dropdown";
 import { academicsLinks } from "./Dropdown/dropdownLinks";
+const Logo = require("../../assets/images/pdea1.jpeg");
 
 function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -22,24 +23,22 @@ function Navbar() {
     };
   }, [scrolled]);
 
-  const handleLogoClick = () => {
-    window.location.href = "/";
-  };
+  
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
 
   return (
-    <nav className={`navbar ${scrolled ? "scrolled" : ""}`}>
+    <nav className={`navbar border-b border-gradient-border ${scrolled ? "scrolled border-b border-gradient-border" : ""}`}>
       <div className="hamburger" onClick={toggleMenu}>
         <div className={`bar ${isOpen ? "open" : ""}`}></div>
         <div className={`bar ${isOpen ? "open" : ""}`}></div>
         <div className={`bar ${isOpen ? "open" : ""}`}></div>
       </div>
       
-      <div className="logo" onClick={handleLogoClick} style={{ cursor: "pointer" }}>
-        PDEA'S COEM
+      <div className="logo" style={{ cursor: "pointer" }}>
+        <img src={Logo} alt="logo" width={35} />
       </div>
 
       <ul className={`nav-links ${isOpen ? "open" : ""}`}>
