@@ -31,19 +31,21 @@ function Navbar() {
 
   return (
     <nav className={`navbar border-b border-gradient-border ${scrolled ? "scrolled border-b border-gradient-border" : ""}`}>
-      <div className="hamburger" onClick={toggleMenu}>
+      <div className="hamburger text-black" onClick={toggleMenu}>
         <div className={`bar ${isOpen ? "open" : ""}`}></div>
         <div className={`bar ${isOpen ? "open" : ""}`}></div>
         <div className={`bar ${isOpen ? "open" : ""}`}></div>
       </div>
       
       <div className="logo" style={{ cursor: "pointer" }}>
+        <a href="/" target="_blank" rel="noopener noreferrer">
         <img src={Logo} alt="logo" width={35} />
+        </a>
       </div>
 
       <ul className={`nav-links ${isOpen ? "open" : ""}`}>
 
-        <Dropdown title={{ href: "/academics", text: "Academics" }} links={academicsLinks} />
+        <Dropdown title={{text: "Academics" }} links={academicsLinks} />
 
         <li>
           <a href="/about" target="_blank" rel="noopener noreferrer">About</a>
