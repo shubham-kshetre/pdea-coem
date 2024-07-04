@@ -14,10 +14,6 @@ function UGContent() {
     transition: { duration: 0.3 },
   };
 
-  const fadeIn = {
-    opacity: 0,
-    transition: { duration: 0.3 },
-  };
 
   return (
     <motion.div
@@ -103,7 +99,7 @@ function UGContent() {
             <div className='flex flex-col text-center my-2'>
               <hr />              
               <span className='text-blue-900 font-bold'>Download:</span>
-              <a href="#" className="text-blue-500">FRA fee regulating authority 2023-24</a>
+              <a href="/ass" className="text-blue-500">FRA fee regulating authority 2023-24</a>
             </div>
             <hr /> 
 
@@ -281,7 +277,7 @@ function UGContent() {
           <div className='flex flex-col text-center my-2'>
             <hr />              
             <span className='text-blue-900 font-bold'>Download:</span>
-            <a href="#" className="text-blue-500">DSE Admission Schedule-21-22</a>
+            <a href="/ass" className="text-blue-500">DSE Admission Schedule-21-22</a>
           </div>
           <hr /> 
 

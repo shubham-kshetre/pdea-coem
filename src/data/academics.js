@@ -88,15 +88,15 @@ export const questionPapers = [
   {
     year: "2023",
     branch: "CS",
-    pattern: "Semester",
-    session: "Midterm",
+    pattern: "2019 Patt",
+    examType: 'Endsem',
     url: "/path/to/question-paper-2023-midterm.pdf",
   },
   {
     year: "2022",
-    branch: "EE",
-    pattern: "Annual",
-    session: "Final",
+    branch: "mech",
+    pattern: "2015 Patt",
+    examType: 'Insem',
     url: "/path/to/question-paper-2022-final.pdf",
   },
   // Add more question paper data here

@@ -19,6 +19,8 @@ import Gallery from './pages/Gallery';
 import Hostels from './pages/Hostels';
 import Placements from './pages/Placements';
 import Scholarship from './pages/Scholarship';
+import Statistics from './pages/Statistics';
+import Alumni from './pages/Alumni';
 
 
 function App() {
@@ -27,6 +29,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/home" element={<Home />} />
+        <Route path="/statistic" element={<Statistics />} />
         <Route path="/about" element={<AboutUs />} />
         <Route path="/academics" element={<Academics />} />
         <Route path="/computer-engineering" element={<CompEngg />} />
@@ -43,6 +46,7 @@ function App() {
         <Route path="/hostels" element={<Hostels />} />
         <Route path="/placements" element={<Placements />} />
         <Route path="/scholarship" element={<Scholarship />} />
+        <Route path="/alumni" element={<Alumni />} />
       </Routes>
     </BrowserRouter>
   );

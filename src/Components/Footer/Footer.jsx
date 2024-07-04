@@ -1,12 +1,13 @@
 import React from 'react';
 import './footer.css'; // Import the CSS file
+import Logo from "../../assets/images/pdea1.png";
 
 const Footer = () => {
     return (
         <>
             <footer className="footer">
                 <div className="footer-column">
-                    <img src="/pdea1.jpeg"  alt="Logo" />
+                    <img src={Logo} width={70} alt="Logo" className='mx-auto'/>
                     <p>Pune District Education Association's College of Engineering, Manjari (Bk)
     Manjari Bk, Pincode: 412307</p>
                     <p style={{marginBottom:'20px'}}>Contact us:+91546568113</p>

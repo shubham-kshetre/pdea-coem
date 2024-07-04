@@ -1,4 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
+import Button from '../Button/Button';
+import { Link } from 'react-router-dom';
 
 const statisticsData = [
   { id: 1, title: 'Total Students', targetNumber: 4500 },
@@ -72,7 +74,11 @@ const Statistic = () => {
             </h1>
           </div>
         ))}
+        <Link to="/statistic" >
+          <Button label="More Stats" />
+        </Link>
       </div>
+
     </section>
   );
 };
