@@ -19,7 +19,7 @@ const ApplyButton = () => {
 
   return (
     <div>
-      <button className="apply-btn bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600" onClick={handleApplyClick}>
+      <button className="bg-orange-500 text-white px-4 py-2 rounded-md hover:bg-blue-600" onClick={handleApplyClick}>
         Apply Now
       </button>
       <Modal isOpen={isModalOpen} onClose={handleCloseModal} onConfirm={handleConfirmApply} />
