@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from "react";
 import "./Navbar.css";
 import Dropdown from "./Dropdown/Dropdown";
-import { academicsLinks } from "./Dropdown/dropdownLinks";
+import { academicsLinks,naacLinks } from "./Dropdown/dropdownLinks";
 import ApplyButton from "../ApplyButton";
 const Logo = require("../../assets/images/pdea1.png");
 
@@ -78,6 +78,7 @@ function Navbar() {
         <li>
           <a href="/alumni" target="_blank" rel="noopener noreferrer">ALUMNI</a>
         </li>
+        <Dropdown title={{text: "NAAC" }} links={naacLinks} />
         <li>
           <a href="https://moodle.pdeacoem.org/login/index.php" target="_blank" rel="noopener noreferrer">MOODLE</a>
         </li>
