@@ -25,4 +25,57 @@ export const academicsLinks = [
   },
 ];
 
+
+export const naacLinks = [
+  {
+    href: "/iqac",
+    text: "IQAC",
+  },
+  {
+    text: "OLD IQAC",
+    subLinks: [
+      { 
+        href: "/oldiqac", 
+        text: "IQAC" 
+      },
+      { 
+        href: "/oldiqac", 
+        text: "Central Portfolio 2018-19" 
+      },
+      { 
+        href: "/oldiqac", 
+        text: "Student Satisfaction Survey Form" 
+      },
+      { 
+        href: "/oldiqac", 
+        text: "Code of Conduct" 
+      },
+      { 
+        href: "/oldiqac", 
+        text: "CO PO PSO PEO" 
+      },
+      { 
+        href: "/oldiqac", 
+        text: "Support and Maintenance Mechanism" 
+      },
+    ],
+  },
+  {
+    href: "/iqac",
+    text: "Best Practices",
+  },
+  {
+    text: "OLD IQAC",
+    subLinks: [
+      { 
+        href: "/oldiqac", 
+        text: "ROBO CLUB" 
+      },
+      { 
+        href: "/oldiqac", 
+        text: "ED Center" 
+      },
+    ],
+  },
+];
 // You can add more links here

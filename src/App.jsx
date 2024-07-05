@@ -20,6 +20,9 @@ import Hostels from './pages/Hostels';
 import Placements from './pages/Placements';
 import Scholarship from './pages/Scholarship';
 import Statistics from './pages/Statistics';
+
+import IQAC from './pages/IQAC';
+
 import Alumni from './pages/Alumni';
 
 
@@ -46,6 +49,7 @@ function App() {
         <Route path="/hostels" element={<Hostels />} />
         <Route path="/placements" element={<Placements />} />
         <Route path="/scholarship" element={<Scholarship />} />
+        <Route path="/iqac" element={<IQAC />} />
         <Route path="/alumni" element={<Alumni />} />
       </Routes>
     </BrowserRouter>
