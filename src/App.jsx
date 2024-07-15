@@ -2,6 +2,8 @@ import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import AboutUs from './pages/AboutUs';
+import Notifications from './pages/Notifications';
+
 
 import Academics from './pages/Academics/Academics';
 import CompEngg from './pages/Academics/Deapartment/ComputerEngineering';
@@ -24,6 +26,10 @@ import Statistics from './pages/Statistics';
 import IQAC from './pages/IQAC';
 
 import Alumni from './pages/Alumni';
+
+import Login from './pages/Login';
+import AdminPanel from './pages/AdminPanel';
+import ProtectedRoute from './Components/ProtectedRoute';
 
 
 function App() {
@@ -51,6 +57,10 @@ function App() {
         <Route path="/scholarship" element={<Scholarship />} />
         <Route path="/iqac" element={<IQAC />} />
         <Route path="/alumni" element={<Alumni />} />
+
+        <Route path="/notifications" element={<Notifications />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/admin/*" element={<ProtectedRoute element={<AdminPanel />} />} />
       </Routes>
     </BrowserRouter>
   );
