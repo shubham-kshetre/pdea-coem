@@ -13,7 +13,7 @@ function Events() {
     const fetchEvents = async () => {
       try {
         const response = await axios.get('http://localhost:5000/api/events');
-        setEvents(response.data.sort((a, b) => new Date(b.date) - new Date(a.date))); // Sort by date
+        setEvents(response.data); // Events are already sorted by date in the backend
       } catch (error) {
         console.error('Error fetching events:', error);
       }

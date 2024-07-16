@@ -1,5 +1,5 @@
-import React from "react";
-import "./eventcard.css";
+import React from 'react';
+import './eventcard.css';
 
 function EventCard({ date, title, description, link }) {
   const wordLimit = 20; // Set word limit for description

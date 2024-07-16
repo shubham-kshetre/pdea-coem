@@ -5,17 +5,21 @@ import { motion } from 'framer-motion';
 const CreateNotification = () => {
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
+  const [startDate, setStartDate] = useState('');
+  const [endDate, setEndDate] = useState('');
   const [message, setMessage] = useState('');
   const [messageType, setMessageType] = useState('');
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('http://localhost:5000/api/notifications', { title, description }, { withCredentials: true });
+      await axios.post('http://localhost:5000/api/notifications', { title, description, startDate, endDate }, { withCredentials: true });
       setMessageType('success');
       setMessage('Notification created successfully');
       setTitle('');
       setDescription('');
+      setStartDate('');
+      setEndDate('');
     } catch (error) {
       console.error('Error creating notification:', error);
       setMessageType('error');
@@ -49,10 +53,30 @@ const CreateNotification = () => {
           />
         </div>
         <div>
-          <label className="block text-sm font-medium text-gray-700 mb-1">Description</label>
+          <label className="block text-sm font-medium text-gray-700 mb-1">Description (max 20 words)</label>
           <textarea
             value={description}
             onChange={(e) => setDescription(e.target.value)}
+            required
+            className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-orange-400 focus:border-orange-400"
+          />
+        </div>
+        <div>
+          <label className="block text-sm font-medium text-gray-700 mb-1">Start Date</label>
+          <input
+            type="date"
+            value={startDate}
+            onChange={(e) => setStartDate(e.target.value)}
+            required
+            className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-orange-400 focus:border-orange-400"
+          />
+        </div>
+        <div>
+          <label className="block text-sm font-medium text-gray-700 mb-1">End Date</label>
+          <input
+            type="date"
+            value={endDate}
+            onChange={(e) => setEndDate(e.target.value)}
             required
             className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-orange-400 focus:border-orange-400"
           />
@@ -69,3 +93,4 @@ const CreateNotification = () => {
 };
 
 export default CreateNotification;
+  

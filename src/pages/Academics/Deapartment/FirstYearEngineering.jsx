@@ -1,9 +1,25 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import DepartmentTemplate from '../../../PageTemplate/DepartmentTemplate';
 import { firstyear } from '../../../data/hod';
-import { firstYearDepartmentData } from '../../../data/department'
+import { firstYearDepartmentData } from '../../../data/department';
+import axios from 'axios';
 
 const FirstYear = () => {
+  const [events, setEvents] = useState([]);
+
+  useEffect(() => {
+    const fetchEvents = async () => {
+      try {
+        const response = await axios.get('http://localhost:5000/api/events');
+        const filteredEvents = response.data.filter(event => event.tags && event.tags.includes('First Year Engineering'));
+        setEvents(filteredEvents);
+      } catch (error) {
+        console.error('Error fetching events:', error);
+      }
+    };
+
+    fetchEvents();
+  }, []);
 
   return (
     <DepartmentTemplate 
@@ -11,10 +27,9 @@ const FirstYear = () => {
       title={firstYearDepartmentData.title} 
       description={firstYearDepartmentData.description}
       teachers={firstYearDepartmentData.teachers}
-      events={firstYearDepartmentData.events}
+      events={events}
       galleryImages={firstYearDepartmentData.galleryImages}
-      
-      />
+    />
   );
 };
 

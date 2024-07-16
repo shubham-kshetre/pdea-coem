@@ -1,16 +1,33 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 import DepartmentTemplate from '../../../PageTemplate/DepartmentTemplate';
 import { Mechanical } from '../../../data/hod';
 import { mechDepartmentData } from '../../../data/department'
 
 const MechEngg = () => {
+  const [events, setEvents] = useState([]);
+
+  useEffect(() => {
+    const fetchEvents = async () => {
+      try {
+        const response = await axios.get('http://localhost:5000/api/events');
+        const filteredEvents = response.data.filter(event => event.tags && event.tags.includes('Mechanical Engineering'));
+        setEvents(filteredEvents);
+      } catch (error) {
+        console.error('Error fetching events:', error);
+      }
+    };
+
+    fetchEvents();
+  }, []);
+
   return (
     <DepartmentTemplate 
       cardsData={Mechanical}
       title={mechDepartmentData.title} 
       description={mechDepartmentData.description}
       teachers={mechDepartmentData.teachers}
-      events={mechDepartmentData.events}
+      events={events}
       galleryImages={mechDepartmentData.galleryImages}
       
       />
