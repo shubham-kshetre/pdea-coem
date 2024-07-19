@@ -9,6 +9,10 @@ import CreateEvent from '../Components/adminoptions/CreateEvent'; // Import Crea
 import AdminOptionContent from '../Components/adminpanel/AdminOptionContent';
 import Logo from "../assets/images/pdea1.png";
 
+import AddFaculty from '../Components/adminoptions/AddFaculty';
+import UpdateFaculty from '../Components/adminoptions/UpdateFaculty';
+import DeleteFaculty from '../Components/adminoptions/DeleteFaculty';
+
 const AdminPanel = () => {
   const [selectedNavItem, setSelectedNavItem] = useState('admin-options');
   const navigate = useNavigate();
@@ -125,6 +129,9 @@ const AdminPanel = () => {
             <Route path="create-notification" element={<CreateNotification />} />
             <Route path="create-event" element={<CreateEvent />} />
             <Route path="settings" element={<SettingsContent />} />
+            <Route path="add-faculty" element={<AddFaculty />} />
+            <Route path="update-faculty" element={<UpdateFaculty />} />
+            <Route path="delete-faculty" element={<DeleteFaculty />} />
           </Routes>
         </div>
       </div>

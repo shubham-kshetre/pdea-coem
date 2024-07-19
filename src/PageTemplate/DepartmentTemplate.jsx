@@ -2,7 +2,7 @@ import React from 'react';
 import { Link as ScrollLink } from 'react-scroll';
 import Navbar from '../Components/Navbar/Navbar';
 import AcademicCard from '../Components/academics/AcademicCard/AcademicCard';
-import TeacherSection from '../Components/academics/TeacherSection';
+import TeacherSection from '../Components/academics/FacultySection';
 import EventDepartmentSection from '../Components/academics/EventDepartmentSection';
 import GallerySection from '../Components/academics/GallerySection';
 import Button from '../Components/Button/Button';

@@ -31,6 +31,8 @@ import Login from './pages/Login';
 import AdminPanel from './pages/AdminPanel';
 import ProtectedRoute from './Components/ProtectedRoute';
 
+import GeneralFacultyPage from './pages/GeneralFacultyPage';
+
 
 function App() {
   return (
@@ -61,6 +63,8 @@ function App() {
         <Route path="/notifications" element={<Notifications />} />
         <Route path="/login" element={<Login />} />
         <Route path="/admin/*" element={<ProtectedRoute element={<AdminPanel />} />} />
+
+        <Route path="/faculty" element={<GeneralFacultyPage />} /> 
       </Routes>
     </BrowserRouter>
   );

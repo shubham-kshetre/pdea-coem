@@ -1,5 +1,6 @@
 import React from 'react';
-import { FiBell, FiCalendar } from 'react-icons/fi'; // Import additional icons
+import { FiBell, FiCalendar, FiUserPlus, FiUserX } from 'react-icons/fi'; // Import additional icons
+import { LiaUserEditSolid } from "react-icons/lia";
 import { useNavigate } from 'react-router-dom';
 
 const AdminOptionContent = () => {
@@ -8,6 +9,9 @@ const AdminOptionContent = () => {
   const adminOptions = [
     { title: 'Create Notification', icon: <FiBell />, path: '/admin/create-notification' },
     { title: 'Create Event', icon: <FiCalendar />, path: '/admin/create-event' },
+    { title: 'Add Faculty', icon: <FiUserPlus />, path: '/admin/add-faculty' },
+    { title: 'Delete Faculty', icon: <FiUserX />, path: '/admin/delete-faculty' },
+    { title: 'Update Faculty', icon: <LiaUserEditSolid />, path: '/admin/update-faculty' }
   ];
 
   const handleCardClick = (path) => {
