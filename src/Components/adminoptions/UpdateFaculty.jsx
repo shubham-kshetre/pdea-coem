@@ -1,3 +1,4 @@
+// src/pages/UpdateFaculty.jsx
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
@@ -8,6 +9,7 @@ const UpdateFaculty = () => {
   const [position, setPosition] = useState('');
   const [image, setImage] = useState('');
   const [email, setEmail] = useState('');
+  const [tags, setTags] = useState(''); // Add state for tags
   const [message, setMessage] = useState('');
   const [messageType, setMessageType] = useState('');
 
@@ -27,14 +29,15 @@ const UpdateFaculty = () => {
   }, []);
 
   const handleUpdate = async () => {
-    if (!selectedFaculty || !name || !position || !image || !email) {
+    if (!selectedFaculty || !name || !position || !image || !email || !tags) {
       setMessageType('error');
       setMessage('Please fill in all fields');
       return;
     }
 
     try {
-      await axios.put(`http://localhost:5000/api/faculty/${selectedFaculty}`, { name, position, image, email });
+      const tagsArray = tags.split(',').map(tag => tag.trim());
+      await axios.put(`http://localhost:5000/api/faculty/${selectedFaculty}`, { name, position, image, email, tags: tagsArray });
       setMessageType('success');
       setMessage('Faculty member updated successfully');
       setSelectedFaculty('');
@@ -42,6 +45,7 @@ const UpdateFaculty = () => {
       setPosition('');
       setImage('');
       setEmail('');
+      setTags(''); // Clear tags
     } catch (error) {
       console.error('Error updating faculty:', error);
       setMessageType('error');
@@ -69,6 +73,7 @@ const UpdateFaculty = () => {
               setPosition(selected.position);
               setImage(selected.image);
               setEmail(selected.email);
+              setTags(selected.tags.join(', ')); // Set tags
             }
           }}
           className="w-full px-3 py-2 border border-gray-300 rounded-md"
@@ -116,6 +121,16 @@ const UpdateFaculty = () => {
             type="email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
+            required
+            className="w-full px-3 py-2 border border-gray-300 rounded-md"
+          />
+        </div>
+        <div className="mt-4">
+          <label className="block text-sm font-medium text-gray-700 mb-1">Tags (comma separated)</label>
+          <input
+            type="text"
+            value={tags}
+            onChange={(e) => setTags(e.target.value)}
             required
             className="w-full px-3 py-2 border border-gray-300 rounded-md"
           />

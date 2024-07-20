@@ -1,5 +1,6 @@
+// src/components/adminpanel/AdminOptionsContent.jsx
 import React from 'react';
-import { FiBell, FiCalendar, FiUserPlus, FiUserX } from 'react-icons/fi'; // Import additional icons
+import { FiBell, FiCalendar, FiUserPlus, FiUserX } from 'react-icons/fi';
 import { LiaUserEditSolid } from "react-icons/lia";
 import { useNavigate } from 'react-router-dom';
 

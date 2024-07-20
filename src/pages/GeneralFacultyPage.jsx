@@ -1,3 +1,4 @@
+// src/pages/GeneralFacultyPage.jsx
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import TeacherCard from '../Components/academics/TeacherCard';
@@ -33,7 +34,7 @@ const GeneralFacultyPage = () => {
         >
           <h1 className="text-4xl md:text-5xl font-bold mb-4">Meet Our Esteemed Faculty</h1>
           <p className="text-lg md:text-xl mb-8">
-          Discover the brilliant minds shaping the future at our college.
+            Discover the brilliant minds shaping the future at our college.
           </p>
         </motion.div>
       </div>
@@ -52,7 +53,7 @@ const GeneralFacultyPage = () => {
           )}
         </div>
       </div>
-        <Footer />
+      <Footer />
     </>
   );
 };

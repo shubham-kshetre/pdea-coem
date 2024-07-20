@@ -1,24 +1,45 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 
+const departments = [
+  "First Year Engineering",
+  "Computer Engineering",
+  "Electronics and Telecommunication Engineering",
+  "Information Technology",
+  "Instrumentation and Control",
+  "M. B. A",
+  "Mechanical Engineering"
+];
+
 const AddFaculty = () => {
   const [name, setName] = useState('');
   const [position, setPosition] = useState('');
   const [image, setImage] = useState('');
   const [email, setEmail] = useState('');
+  const [tags, setTags] = useState([]);
   const [message, setMessage] = useState('');
   const [messageType, setMessageType] = useState('');
+
+  const handleTagChange = (e) => {
+    const { value, checked } = e.target;
+    if (checked) {
+      setTags([...tags, value]);
+    } else {
+      setTags(tags.filter(tag => tag !== value));
+    }
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('http://localhost:5000/api/faculty', { name, position, image, email }, { withCredentials: true });
+      await axios.post('http://localhost:5000/api/faculty', { name, position, image, email, tags }, { withCredentials: true });
       setMessageType('success');
       setMessage('Faculty member added successfully');
       setName('');
       setPosition('');
       setImage('');
       setEmail('');
+      setTags([]);
     } catch (error) {
       console.error('Error adding faculty:', error);
       setMessageType('error');
@@ -74,6 +95,21 @@ const AddFaculty = () => {
             required
             className="w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-orange-400 focus:border-orange-400"
           />
+        </div>
+        <div>
+          <label className="block text-sm font-medium text-gray-700 mb-1">Tags</label>
+          {departments.map((department, index) => (
+            <div key={index} className="flex items-center">
+              <input
+                type="checkbox"
+                value={department}
+                checked={tags.includes(department)}
+                onChange={handleTagChange}
+                className="form-checkbox h-4 w-4 text-orange-400 transition duration-150 ease-in-out"
+              />
+              <span className="ml-2">{department}</span>
+            </div>
+          ))}
         </div>
         <button
           type="submit"
