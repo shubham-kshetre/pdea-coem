@@ -1,30 +1,53 @@
-import React, { useState } from 'react';
-import GalleryCategory from './GalleryCategory';
-import { motion } from 'framer-motion';
-import { Year2021 } from '../../data/gallery';
+import React, { useState, useEffect } from "react";
+import GalleryCategory from "./GalleryCategory";
+import { motion } from "framer-motion";
 
+const departments = [
+  "Library",
+  "First Year Engineering",
+  "Computer Engineering",
+  "Electronics and Telecommunication Engineering",
+  "Information Technology",
+  "Instrumentation and Control",
+  "M. B. A",
+  "Mechanical Engineering",
+];
 
-
-const Gallery2122 = () => {
-  const [selectedCategory, setSelectedCategory] = useState('Library'); // Initial selected category
+const Gallery2021 = () => {
+  const [selectedCategory, setSelectedCategory] = useState("Library");
   const [isFullscreenOpen, setIsFullscreenOpen] = useState(false);
-  const [selectedImage, setSelectedImage] = useState(null); // Stores selected image for fullscreen
+  const [selectedImage, setSelectedImage] = useState(null);
+  const [gallery, setGallery] = useState([]);
 
   const handleCategoryClick = (category) => {
     setSelectedCategory(category);
   };
 
-  const selectedImages = Year2021[selectedCategory] || []; // Get images for selected category
-
   const handleImageClick = (image) => {
     setSelectedImage(image);
-    setIsFullscreenOpen(true); // Open fullscreen on image click
+    setIsFullscreenOpen(true);
   };
 
   const handleCloseFullscreen = () => {
     setSelectedImage(null);
-    setIsFullscreenOpen(false); // Close fullscreen on close button click
+    setIsFullscreenOpen(false);
   };
+
+  useEffect(() => {
+    const fetchGallery = async () => {
+      try {
+        const response = await fetch(
+          `http://localhost:5000/api/gallery?year=2021-22&department=${selectedCategory}`
+        );
+        const data = await response.json();
+        setGallery(data);
+      } catch (error) {
+        console.error("Error fetching gallery:", error);
+      }
+    };
+
+    fetchGallery();
+  }, [selectedCategory]);
 
   return (
     <div className="gallery-container bg-gray-100 min-h-screen p-8">
@@ -34,7 +57,7 @@ const Gallery2122 = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
       >
-        {Object.keys(Year2021).map((category) => (
+        {departments.map((category, idx) => (
           <GalleryCategory
             key={category}
             name={category}
@@ -42,8 +65,8 @@ const Gallery2122 = () => {
             onClick={() => handleCategoryClick(category)}
             className={`mt-5 text-lg font-medium px-4 py-2 rounded-full cursor-pointer transition-all duration-300 ease-in-out ${
               category === selectedCategory
-                ? 'bg-accent-color text-white'
-                : 'bg-blue-500 text-white hover:bg-secondary-color hover:text-primary-color'
+                ? "bg-accent-color text-white"
+                : "bg-blue-500 text-white hover:bg-secondary-color hover:text-primary-color"
             }`}
           />
         ))}
@@ -54,11 +77,11 @@ const Gallery2122 = () => {
         animate={{ opacity: 1 }}
         transition={{ duration: 0.5 }}
       >
-        {selectedImages.map((image) => (
+        {gallery.map((image) => (
           <motion.img
-            key={image.id}
-            src={image.src}
-            alt={image.alt}
+            key={image._id}
+            src={image.image}
+            alt={image.department}
             className="rounded-lg shadow-lg object-cover h-64 md:h-auto cursor-pointer hover:opacity-75 transition duration-300 ease-in-out"
             onClick={() => handleImageClick(image)}
             whileHover={{ scale: 1.05 }}
@@ -75,8 +98,8 @@ const Gallery2122 = () => {
           exit={{ opacity: 0 }}
         >
           <motion.img
-            src={selectedImage?.src}
-            alt={selectedImage?.alt}
+            src={selectedImage?.image}
+            alt={selectedImage?.department}
             className="max-h-screen max-w-screen-lg object-contain"
             initial={{ scale: 0.9 }}
             animate={{ scale: 1 }}
@@ -88,7 +111,17 @@ const Gallery2122 = () => {
             whileHover={{ opacity: 1 }}
             animate={{ opacity: 0.8, transition: { duration: 0.3 } }}
           >
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+            >
               <path d="M6 18L18 6M6 6l12 12"></path>
             </svg>
           </motion.button>
@@ -98,4 +131,4 @@ const Gallery2122 = () => {
   );
 };
 
-export default Gallery2122;
+export default Gallery2021;
