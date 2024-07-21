@@ -37,6 +37,8 @@ const adminRoutes = require('./routes/admin');
 const notificationRoutes = require('./routes/notification');
 const eventRoutes = require('./routes/eventRoutes'); // Import event routes
 const facultyRoutes = require('./routes/facultyRoutes'); // Import faculty routes
+const galleryRoutes = require('./routes/gallery'); // Import faculty routes
+
 
 app.use('/api/auth', authRoutes);
 app.use('/api/users', userRoutes); // Include user routes
@@ -44,6 +46,8 @@ app.use('/api/admin', adminRoutes);
 app.use('/api/notifications', notificationRoutes);
 app.use('/api/events', eventRoutes); // Use event routes
 app.use('/api/faculty', facultyRoutes); // Use faculty routes
+app.use('/api/gallery', galleryRoutes); // Use faculty routes
+
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
