@@ -8,7 +8,7 @@ const HeroVid = () => {
       <video autoPlay loop muted playsInline className="absolute top-0 left-0 w-full h-full object-cover">
         <source src={HeroVideo} type="video/mp4" />
       </video>
-      <div className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-40"></div>
+      <div className="absolute top-0 left-0 w-full h-full"></div>
       <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 flex flex-col items-center text-white">
         <Link to="nextSection" smooth={true} duration={500} className="cursor-pointer flex flex-col items-center">
           <button className="bg-gradient-to-r from-blue-500 to-purple-600 text-white py-2 px-6 rounded-full font-semibold mb-4 shadow-lg transform transition-transform hover:scale-105">
