@@ -22,7 +22,10 @@ const Home = () => {
     <Box className="parent">
       <Navbar />
       <HeroVid />
-      <MsgCard />
+      <div id="nextSection">
+      <MsgCard  />
+      </div>
+      
       <Statistic />
       <AboutHome />
       <News />

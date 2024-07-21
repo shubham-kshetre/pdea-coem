@@ -8,7 +8,7 @@ import GallerySection from '../Components/academics/GallerySection';
 import Button from '../Components/Button/Button';
 import Footer from '../Components/Footer/Footer';
 
-const DepartmentTemplate = ({ cardsData, teachers, title, description, events, galleryImages }) => {
+const DepartmentTemplate = ({ cardsData, teachers, title, description, events,  }) => {
   return (
     <>
       <div className="departmentPage">
@@ -36,9 +36,6 @@ const DepartmentTemplate = ({ cardsData, teachers, title, description, events, g
             <ScrollLink to="eventSection" smooth={true} duration={500}>
               <Button label="Events" />
             </ScrollLink>
-            <ScrollLink to="gallerySection" smooth={true} duration={500}>
-              <Button label="Gallery" />
-            </ScrollLink>
           </div>
         </div>
         <div className="bg-gray-100 mx-10" id='teachersSection'>
@@ -46,9 +43,6 @@ const DepartmentTemplate = ({ cardsData, teachers, title, description, events, g
         </div>
         <div className="bg-gray-100 mx-10" id='eventSection'>
           <EventDepartmentSection events={events} />
-        </div>
-        <div className="bg-gray-100 mx-10" id='gallerySection'>
-          <GallerySection galleryImages={galleryImages} />
         </div>
         <Footer />
       </div>
